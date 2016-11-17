@@ -1,5 +1,5 @@
 import java.util.*;
-public class robin1{
+public class stack3{
 		public static void main(String args[]){
 				Scanner input =new Scanner(System.in);
 				System.out.println("Input string");
