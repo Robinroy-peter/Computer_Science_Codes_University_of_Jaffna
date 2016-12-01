@@ -1,5 +1,5 @@
 import java.util.*;
-public class parantheses{
+public class question_1{
 	public static void main(String args[]){
 		String str ="({{[(]}})";
 		boolean balnced = true;
