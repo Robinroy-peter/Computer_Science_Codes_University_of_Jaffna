@@ -26,6 +26,9 @@ class myQueue{
 	}
 	public boolean deQueuefull(){
 		return(front == maxSize);
-	}	
+	}
+	public boolean Queueempty(){
+		return(front == rear);
+	}
 }	
 
