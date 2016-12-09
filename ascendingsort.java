@@ -1,9 +1,11 @@
 import java.util.*;
-public class ascending{
+public class ascendingsort{
 	public static void main(String args[]){
 		int size =5;
 		int x =0;
 		int y =0;
+		int temp1 =0;
+		int temp2 =0;
 		boolean exist_statues1 = true;
 		boolean exist_statues2 = true;
 		boolean exist_statues3 = true;
@@ -12,13 +14,34 @@ public class ascending{
 		Queue q1 = new Queue(size);
 		Queue q2 = new Queue(size);
 		Queue ResultQueue = new Queue(2*size);
+		int[] q11 =new int[size];
+		int[] q22 =new int[size];
 		System.out.println("Input Q1");
 		for(int e=0;e<size;e++){
-			q1.enQueue(input.nextInt());
+			q11[e]=input.nextInt();
 		}
 		System.out.println("Input Q2");
 		for(int e=0;e<size;e++){
-			q2.enQueue(input.nextInt());
+			q22[e]=input.nextInt();
+		}
+		//Bubble sort part
+		for(int w=0;w<size;w++){
+			for(int r=0;r<size-w-1;r++){
+				if(q11[r]>q11[r+1]){
+					temp1 =q11[r+1];
+					q11[r+1] = q11[r];
+					q11[r] =temp1;
+				}
+				if(q22[r]>q22[r+1]){
+					temp2 =q22[r+1];
+					q22[r+1] = q22[r];
+					q22[r] =temp2;
+				}
+			}
+		}
+		for(int d=0;d<size;d++){
+			q1.enQueue(q11[d]);
+			q2.enQueue(q22[d]);
 		}
 		x =q1.deQueue();
 		y =q2.deQueue();
