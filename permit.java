@@ -9,6 +9,7 @@ public class permit{
             System.out.println("-------------------");
         }else{
             for(int i=k;i<n;i++){
+                System.out.println("------SWAP "+k+"--------");
                 System.out.println("i ="+k+" ");
                 String t =a[k];
                 System.out.println("t ="+a[k]+" ");
@@ -16,9 +17,9 @@ public class permit{
                 System.out.println("a["+k+"]="+a[i]+" ");
                 a[i]=t;
                 System.out.println("a["+i+"]="+t+" ");
-                System.out.println();
-                perm(a,k+1,n);
                 System.out.println("-------------------");
+                perm(a,k+1,n);
+                System.out.println("------RESWAP "+k+"--------");
                 t =a[k];
                 System.out.println("t ="+a[k]+" ");
                 a[k] =a[i];
@@ -32,6 +33,6 @@ public class permit{
     public static void main(String[] args){
         permit one =new permit();
         String a[] ={"A","B","C"};
-        one.perm(a,0,3);
+        one.perm(a,0,2);
     }
 }
