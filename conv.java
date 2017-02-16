@@ -1,38 +1,18 @@
 import java.util.*;
 public class conv{
-	public static String bina(int a){
-		String h="";
-		while(a/2>=1){
-			int temp =a/2;
-			h +=a%2;
-			a=temp;
-		}
-		h +=a;
-		return h;
-	}
-	public static String oct(int a){
-		String h="";
-		while(a/8>=1){
-			int temp =a/8;
-			h +=a%8;
-			a=temp;
-		}
-		h +=a;
-		return h;
-	}
-	public static String hex(int a){
+	public static String proc(int a,int c){
 		String h="";
 		String[]s={"A","B","C","D","E","F"};
-		while(a/16>=1){
-			int temp =a/16;	
-			if(a%16>9){
-				h +=s[a%16-10];
+		while(a/c>=1){
+			int temp =a/c;	
+			if(a%c>9){
+				h +=s[a%c-10];
 			}else{
-				h += a%16;}
+				h += a%c;}
 			a=temp;
 		}
-			if(a%16>9){
-				h +=s[a%16-10];
+			if(a%c>9){
+				h +=s[a%c-10];
 			}else{
 				h += a;}
 		return h;
@@ -50,13 +30,13 @@ public class conv{
 		int select =input.nextInt();
 		switch (select){
 			case 1:
-				f=bina(dec);
+				f=proc(dec,2);
 				break;
 			case 2:
-				f=oct(dec);
+				f=proc(dec,8);
 				break;
 			case 3:
-				f=hex(dec);
+				f=proc(dec,16);
 				break;
 			default :
 				System.out.println("Error input");
