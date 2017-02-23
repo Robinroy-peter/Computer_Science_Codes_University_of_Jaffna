@@ -1,8 +1,8 @@
 public class Node{
 	Node next;
-	int num;
+	char num;
 	
-	public Node(int val){
+	public Node(char val){
 		num =val;
 		next =null;
 		
