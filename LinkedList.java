@@ -33,7 +33,7 @@ class LinkedList{
 				tempNode=tempNode.next;
 			}
 		}
-	public void conecet(int insetVa){
+	public void connect(int insetVa){
 		Node nod =new Node(insetVa);
 		Node tempNode1 = Head;
 		Node tempNode2 = null;
@@ -76,7 +76,7 @@ class LinkedList{
 		System.out.println("------------------------------");
 		int insertNumber =input.nextInt();
 		System.out.println("------------------------------");
-		myList1.conecet(insertNumber);
+		myList1.connect(insertNumber);
 		myList1.printList();
 		//myList2.printList();
 	}
