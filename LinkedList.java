@@ -1,6 +1,7 @@
+import java.util.*;
 class LinkedList{
 	private Node Head =null;
-	public void addnodeFirst(char val){
+	public void addnodeFirst(int val){
 		Node node1 =new Node(val);
 		if(Head ==null){
 			Head=node1;
@@ -11,7 +12,7 @@ class LinkedList{
 		}
 		}
 	
-	public void addnodeLast(char val){
+	public void addnodeLast(int val){
 		Node node2=new Node(val);
 		if(Head ==null){
 			Head= node2;
@@ -32,37 +33,51 @@ class LinkedList{
 				tempNode=tempNode.next;
 			}
 		}
+	public void conecet(int insetVa){
+		Node nod =new Node(insetVa);
+		Node tempNode1 = Head;
+		Node tempNode2 = null;
+		while(tempNode1.next != null){
+			if((tempNode1.num<=insetVa)&&(tempNode1.next.num>=insetVa)||(tempNode1.num>=insetVa)){
+					break;
+			}
+			tempNode1=tempNode1.next;
+		}
+		if(tempNode1.next==null){
+			tempNode1.next = nod;
+		}else if(tempNode1 ==Head){
+			tempNode2 = Head;
+			Head =nod;
+			nod.next =tempNode2;
+		}else{
+			tempNode2 = tempNode1.next;
+			tempNode1.next =nod;
+			nod.next =tempNode2;
+		}	
+	}
 	//public char get(){
 		//Node tempNod = Head;
 		//char elt =tempNod.num;
 		//tempNod=tempNod.next;
 		//return elt;
 	//}
-	static Node tempNode1;
-	static Node tempNode2;
+
 	public static void main(String args[]){
-			LinkedList myList1 = new LinkedList();
-			LinkedList myList2 = new LinkedList();
-			String txt ="madam";
-			boolean pali = true;
-			int lenth =txt.length();
-			for(int y=0;y<txt.length();y++){
-				myList1.addnodeFirst(txt.charAt(y));
-				myList2.addnodeLast(txt.charAt(y));
-			}
-			tempNode1 = myList1.Head;
-			tempNode2 = myList2.Head;
-			while(lenth>0){
-				if(tempNode1.num != tempNode2.num){
-					pali = false;
-					break;
-				}
-				tempNode1=tempNode1.next;
-				tempNode2=tempNode2.next;
-				lenth--;
-			}
-			//myList1.printList();
-			System.out.println(pali);
-			//myList2.printList();
-		}
+		Scanner input = new Scanner(System.in);
+		LinkedList myList1 = new LinkedList();
+		myList1.addnodeLast(1);
+		myList1.addnodeLast(2);
+		myList1.addnodeLast(5);
+		myList1.addnodeLast(7);
+		myList1.addnodeLast(9);
+		myList1.addnodeLast(12);
+		myList1.printList();
+		System.out.println("Input ur insert Number");
+		System.out.println("------------------------------");
+		int insertNumber =input.nextInt();
+		System.out.println("------------------------------");
+		myList1.conecet(insertNumber);
+		myList1.printList();
+		//myList2.printList();
+	}
 }
