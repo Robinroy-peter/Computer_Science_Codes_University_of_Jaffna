@@ -55,7 +55,7 @@
 	<?php
 		echo "<h2>Grade Result</h2>";
 		$grade ="";
-		$Avg = (90+65+80)/3;
+		$Avg = round((90+65+80)/3);
 			if($Avg>75)
 				$grade ="Verygood";
 			elseif($Avg>65)
@@ -65,7 +65,7 @@
 			elseif($Avg<55)
 				$grade ="Fail";
 		$grade1 ="";
-		$Avg1 = (72+50+86)/3;
+		$Avg1 = round((72+50+86)/3);
 			if($Avg1>75)
 				$grade1 ="Verygood";
 			elseif($Avg1>65)
@@ -75,7 +75,7 @@
 			elseif($Avg1<55)
 				$grade1 ="Fail";
 		$grade2 ="";
-		$Avg2 = (56+50+45)/3;
+		$Avg2 = round((56+50+45)/3);
 			if($Avg2>75)
 				$grade2 ="Verygood";
 			elseif($Avg2>65)
@@ -85,7 +85,7 @@
 			elseif($Avg2<55)
 				$grade2 ="Fail";
 		$grade3 ="";
-		$Avg3 = (80+45+30)/3;
+		$Avg3 = round((80+45+30)/3);
 			if($Avg3>75)
 				$grade3 ="Verygood";
 			elseif($Avg3>65)
