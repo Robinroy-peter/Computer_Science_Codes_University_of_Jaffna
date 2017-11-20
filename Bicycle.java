@@ -1,17 +1,26 @@
 class Bicycle{
-    
-    public String owner_name;
-    
-    public Bicycle(){
-        owner_name = "Unknown";
-    }
-    
-    public String getOwnerName(){
-        return owner_name;
-    }
-    
-    public void setOwnerName(String name){
-        owner_name =name;
-    }
-    
+	private String ownerName;
+	private String tagNo;
+	// Data Member
+	//Constructor: Initialzes the data member
+	public Bicycle( ) { 
+		ownerName = "Unknown";
+		tagNo = "Unknown";
+	}
+	//Returns the name of this bicycle's owner
+	public String getOwnerName(){
+		return ownerName;
+	}
+	//Assigns the name of this bicycle's owner
+	public void setOwnerName(String name) {
+		ownerName= name;
+	}
+	//Returns the TagNo of this bicycle
+	public String getTagNo(){
+		return tagNo;
+	}
+	//Assigns the TagNo of this bicycle
+	public void setTagNo(String tagnu) {
+		tagNo= tagnu;
+	}
 }
