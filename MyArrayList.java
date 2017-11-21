@@ -16,7 +16,7 @@ public class MyArrayList {
     public void insert(Integer obj){
         
         if(this.avail > this.asize-1){
-            throw new Exception("List is filled!");
+           // throw new Exception("List is filled!");
         }
 		
 		data[this.avail] = obj;
@@ -24,10 +24,10 @@ public class MyArrayList {
     }
 
     public void insertAt(Integer obj, int i){
-		for(int r=this.avail;r>i;r--){
+		for(int r=this.avail;r>i-1;r--){
 			data[r]=data[r-1];
 		}
-		data[i] = obj;
+		data[i-1] = obj;
 		this.avail++;
     }
 
@@ -39,7 +39,7 @@ public class MyArrayList {
     }
 	
     public void printElement(int i) {
-        System.out.println(data[i]);
+        System.out.println(data[i-1]);
     }
 
     public void remove(int i) throws Exception{
@@ -49,18 +49,21 @@ public class MyArrayList {
         if(i<0){
             throw new Exception("Negative Index");
         }
-        System.out.println("Data getting removed:" + this.data[i]);
+        System.out.println("Data getting removed:" + this.data[i-1]);
         
-		for(int r=i;r<this.avail;r--){
-			data[r]=data[r-1];
+		for(int r=i-1;r<this.avail;r++){
+			data[r]=data[r+1];
 		}
-		data[i] = obj;
-		this.avail++;
+		this.avail--;
     }
 
 
     public void removeLast(){
-        
+         if(this.avail<=0){
+           // throw new Exception("Negative Index");
+        }
+	data[this.avail-1] = 0;
+	this.avail--;
         // Complete the code here to remove the last element
     }
 
@@ -84,3 +87,4 @@ public class MyArrayList {
         mylist.printList();
     }
 }
+
