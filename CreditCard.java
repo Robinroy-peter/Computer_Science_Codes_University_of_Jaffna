@@ -47,7 +47,7 @@ public class CreditCard{
 		balance -= amount;
 		return balance;
 	}
-	public static void printSummery(CreditCard card){
+	/*public static void printSummery(CreditCard card){
 		System.out.println("Customer : "+card.customer);
 		System.out.println("Bank : "+card.bank);
 		System.out.println("Account : "+card.account);
@@ -55,7 +55,7 @@ public class CreditCard{
 		System.out.println("Balance : "+card.balance);
 		//System.out.println("-----------------------------------");
 	}
-	/*
+	*/
 	public void printSummery(){
 		System.out.println("Customer : "+customer);
 		System.out.println("Bank : "+bank);
@@ -63,7 +63,7 @@ public class CreditCard{
 		System.out.println("Limit : "+limit);
 		System.out.println("Balance : "+balance);
 		//System.out.println("-----------------------------------");
-	} */
+	} 
 	
 	public static void main(String[] args){
 		CreditCard[] wallet = new CreditCard[3];
@@ -78,7 +78,7 @@ public class CreditCard{
 		}
 		
 		for(CreditCard card: wallet){
-			CreditCard.printSummery(card);
+			card.printSummery();
 			while(card.getBalance()>200.0){
 				card.makePayment(200);
 				System.out.println("New Balance = "+card.getBalance());
